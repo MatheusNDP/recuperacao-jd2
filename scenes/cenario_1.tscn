@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ffv7xio8wg5t" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="7_r"]
 [ext_resource type="Texture2D" uid="uid://b0in5o4e4cyak" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="8_r"]
 [ext_resource type="Texture2D" uid="uid://bi4rpnhwgvhr2" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="9_r"]
+[ext_resource type="PackedScene" uid="uid://68o7x2b5sgob" path="res://entities/level_end.tscn" id="10_r"]
 
 [node name="Cenario1" type="Node2D"]
 texture_filter = 1
@@ -67,7 +68,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAFAAUAAAAAAAEAAAAFAAUAAAAAAAIAAAAFAAU
 tile_set = ExtResource("3_r")
 
 [node name="decoration" type="TileMapLayer" parent="tiles"]
-tile_map_data = PackedByteArray("AAAGAAkAAAABAAEAAAALAAoAAAABAAUAAAAUAAgAAAAFAAEAAAAXAAkAAAAFAAUAAAAYAAkAAAAGAAUAAAAZAAkAAAAHAAUAAAApAAoAAAADAAUAAAA0AAkAAAAJAAEAAAA=")
+tile_map_data = PackedByteArray("AAAGAAkAAAABAAEAAAALAAoAAAABAAUAAAAUAAgAAAAFAAEAAAAXAAkAAAAFAAUAAAAYAAkAAAAGAAUAAAAZAAkAAAAHAAUAAAApAAoAAAADAAUAAAA0AAkAAAAJAAEAAAA5AAoAAAADAAUAAAA8AAoAAQAAAAAAAAA9AAoAAQABAAAAAAA=")
 tile_set = ExtResource("4_r")
 
 [node name="player" parent="." instance=ExtResource("1_r")]
@@ -77,3 +78,7 @@ position = Vector2(56, 160)
 limit_top = 0
 limit_right = 1008
 limit_bottom = 208
+
+[node name="portal" parent="." instance=ExtResource("10_r")]
+position = Vector2(952, 176)
+next_level = "cenario_2"

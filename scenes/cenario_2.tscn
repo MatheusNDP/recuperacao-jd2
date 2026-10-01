@@ -5,6 +5,10 @@
 [ext_resource type="TileSet" uid="uid://jc2ulsbtihxw" path="res://tiles/terrain.tres" id="3_r"]
 [ext_resource type="TileSet" uid="uid://cviuh6ic12kvc" path="res://tiles/decoration.tres" id="4_r"]
 [ext_resource type="TileSet" path="res://tiles/terreno_falso.tres" id="5_r"]
+[ext_resource type="PackedScene" uid="uid://68o7x2b5sgob" path="res://entities/level_end.tscn" id="6_r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_portal"]
+size = Vector2(16, 48)
 
 [node name="Cenario2" type="Node2D"]
 texture_filter = 1
@@ -31,7 +35,7 @@ tile_map_data = PackedByteArray("AAAAAOf/AgAFAAUAAAAAAOj/AgAFAAUAAAAAAOn/AgAFAAU
 tile_set = ExtResource("3_r")
 
 [node name="decoration" type="TileMapLayer" parent="tiles"]
-tile_map_data = PackedByteArray("AAAFAAkABAABAAEAAAANAAkABAAJAAMAAAAgAAoABAAFAAMAAAAhAAoABAAGAAMAAAAiAAoABAAHAAMAAAAyAPz/AQADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFAAkABAABAAEAAAANAAkABAAJAAMAAAAgAAoABAAFAAMAAAAhAAoABAAGAAMAAAAiAAoABAAHAAMAAAAyAPz/AQADAAAAAAA3APz/AQAAAAAAAAA5APz/AQACAAAAAAA=")
 tile_set = ExtResource("4_r")
 
 [node name="terrenoFalso" type="TileMapLayer" parent="tiles"]
@@ -46,3 +50,13 @@ position = Vector2(56, 160)
 limit_top = -288
 limit_right = 1008
 limit_bottom = 208
+
+[node name="portal" parent="." instance=ExtResource("6_r")]
+position = Vector2(904, -48)
+next_level = "cenario_1"
+
+[node name="CollisionShape2D" parent="portal" index="0"]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_portal")
+
+[editable path="portal"]
