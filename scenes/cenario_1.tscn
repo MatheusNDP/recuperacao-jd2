@@ -4,9 +4,61 @@
 [ext_resource type="PackedScene" uid="uid://b2ivj4dyhq64n" path="res://entities/camera_2d.tscn" id="2_r"]
 [ext_resource type="TileSet" uid="uid://jc2ulsbtihxw" path="res://tiles/terrain.tres" id="3_r"]
 [ext_resource type="TileSet" uid="uid://cviuh6ic12kvc" path="res://tiles/decoration.tres" id="4_r"]
+[ext_resource type="Texture2D" uid="uid://box3sor57ygk" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="5_r"]
+[ext_resource type="Texture2D" uid="uid://shoaiwivixq7" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="6_r"]
+[ext_resource type="Texture2D" uid="uid://ffv7xio8wg5t" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="7_r"]
+[ext_resource type="Texture2D" uid="uid://b0in5o4e4cyak" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="8_r"]
+[ext_resource type="Texture2D" uid="uid://bi4rpnhwgvhr2" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="9_r"]
 
 [node name="Cenario1" type="Node2D"]
 texture_filter = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ceu" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ceu"]
+texture = ExtResource("5_r")
+centered = false
+
+[node name="nuvens_longe" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/nuvens_longe"]
+texture = ExtResource("6_r")
+centered = false
+
+[node name="nuvens_perto" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/nuvens_perto"]
+texture = ExtResource("7_r")
+centered = false
+
+[node name="colinas" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/colinas"]
+texture = ExtResource("8_r")
+centered = false
+
+[node name="frente" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/frente"]
+texture = ExtResource("9_r")
+centered = false
 
 [node name="tiles" type="Node2D" parent="."]
 
